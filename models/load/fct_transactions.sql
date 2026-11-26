@@ -21,7 +21,6 @@ FROM {{ ref('int_transactions_enriched') }}
 
 {% if is_incremental()%}
  where updated_at >= (select DATEADD('day',-3,max(updated_at))
- from {{this}}
- )
+ from {{this}}       )
 
-{%end if%}
+{% endif %}
