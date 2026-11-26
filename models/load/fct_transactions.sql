@@ -24,4 +24,4 @@ FROM {{ ref('int_transactions_enriched') }}
  from {{this}}
  )
 
- {%end if%}
+{%end if%}
