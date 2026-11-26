@@ -19,7 +19,7 @@ SELECT
     CURRENT_TIMESTAMP() AS dbt_updated_at
 FROM {{ ref('int_transactions_enriched') }}
 
-{% if is_incrimental()%}
+{% if is_incremental()%}
  where updated_at >= (select DATEADD('day',-3,max(updated_at))
  from {{this}}
  )
