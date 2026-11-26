@@ -1,8 +1,8 @@
 {{
     config(
-        materialized='incrimental',
+        materialized='incremental',
         unique_key='txn_id',
-        incrimental_strategy='merge',
+        incremental_strategy='merge',
         on_schema_change='append_new_columns',
         transient='false',
         )
